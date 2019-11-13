@@ -8,10 +8,12 @@
 import React, {useState, useEffect} from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 
-const TicketAddEditScreen = () => {    return (
-    <View><Text>Add Screen</Text></View>
-);}
+const PoolEditScreen = () => {
+    return (
+        <View><Text>Pool Edit Screen</Text></View>
+    );
+}
 
 const styles = StyleSheet.create();
 
-export default TicketAddEditScreen;
+export default PoolEditScreen;
