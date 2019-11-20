@@ -15,38 +15,43 @@ const TicketCard = (props) => {
     }
 
     return(
-        <View>
-            <Text>
-                { props.item.drawing }
-            </Text>
-            <Text>
-                { props.item.drawingDate }
-            </Text>
+        <View style={styles.ticketCard}>
+            <View style={styles.titleRow}>
+                <Text style={styles.drawingTitle}>
+                    { props.item.drawing }
+                </Text>
+                <Text style={styles.drawingDate}>
+                    { props.item.drawingDate }
+                </Text>
+                <Text style={styles.poolName}>
+                { props.item.pool.name } 
+                </Text>
+            </View>
             <Image 
                 style={styles.ticketImage}
                 source={formatImageSource(props.item.image)} /> 
-            <View>
+            <View style={styles.userCard}>
                 <Image style={styles.userImage} 
                 source={formatImageSource(props.item.user.image)} />
                 <Text style={styles.userName}>
                     { props.item.user.fullName }
                 </Text>
             </View>
-            <Text style={styles.poolName}>
-                { props.item.pool.name } 
-            </Text>
         </View>
     );
 
 }
 
 const styles = StyleSheet.create({
-    ticketImage: { width: 300, height: 300 },
+    ticketCard: { flex:1, flexDirection: 'column' },
+    titleRow: { flex:1, flexDirection: 'column'},
+    ticketImage: { flex:4, height: 300 },
     drawingTitle: { fontSize: 20 },
     drawingDate: { fontSize: 15 },
     poolName: { fontSize: 15 },
-    userImage: { width: 60, height: 60 },
-    userName: { fontSize: 15 }
+    userCard: { flex: 1, flexDirection: 'row', alignContent: 'center', justifyContent: 'flex-start' },
+    userImage: { flex:1, width: 80, height: 80, borderRadius: 40 },
+    userName: { flex:4, fontSize: 20 }
 });
 
 export default TicketCard;

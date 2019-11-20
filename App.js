@@ -85,7 +85,7 @@ const App = createSwitchNavigator(
     App: LoggedInTabNav
   },
   {
-    initialRouteName: 'AuthLoading'
+    initialRouteName: 'App'
   }
 );
 

@@ -6,14 +6,38 @@
  */
 
 import React, {useState, useEffect} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-const AuthLoadingScreen = () => {
+const AuthLoadingScreen = (props) => {
+    const {navigate} = props.navigation;
     return (
-        <View><Text>AuthLoadingScreen Screen</Text></View>
+        <View style={styles.View}>
+            <Text style={styles.LoginPrompt}>AuthLoadingScreen Screen</Text>
+            <Button
+                title="Login"
+                onPress={() => navigate('App')}
+                style={styles.LoginButton} />
+        </View>
     );
 }
 
-const styles = StyleSheet.create();
+const styles = StyleSheet.create({
+    LoginPrompt: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'stretch'
+    },
+    LoginButton: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'stretch'
+    },
+    View: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'stretch'
+    }
+});
 
 export default AuthLoadingScreen;
