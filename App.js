@@ -9,9 +9,7 @@ import React from 'react';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack'; 
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import IonIcon from 'react-native-vector-icons/Ionicons';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-
+import Icon from 'react-native-vector-icons/FontAwesome';
 import AuthLoadingScreen from './src/login/AuthLoadingScreen';
 import LoginScreen from './src/login/LoginScreen';
 import SignUpScreen from './src/login/SignUpScreen';
@@ -66,10 +64,10 @@ const SettingsTabStack = createStackNavigator(
 
 const LoggedInTabNav = createBottomTabNavigator(  
   {
-    Home: { screen: HomeTabStack},
-    Add: AddTabStack,
-    Pools: PoolsTabStack,
-    Settings: SettingsTabStack
+    Home: { screen: HomeTabStack, navigationOptions: { tabBarIcon : <Icon name="home" size={20} />}},
+    Add: { screen: AddTabStack, navigationOptions: { tabBarIcon: <Icon name="plus" size={20} />}},
+    Pools: { screen: PoolsTabStack, navigationOptions: { tabBarIcon: <Icon name="group" size={20} />}},
+    Settings: { screen: SettingsTabStack, navigationOptions: { tabBarIcon: <Icon name="gear" size={20} />}},
   },
   {
     initialRouteName: 'Home'
