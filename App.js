@@ -9,11 +9,15 @@ import React from 'react';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack'; 
 import { createBottomTabNavigator } from 'react-navigation-tabs';
+import IonIcon from 'react-native-vector-icons/Ionicons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 import AuthLoadingScreen from './src/login/AuthLoadingScreen';
 import LoginScreen from './src/login/LoginScreen';
 import SignUpScreen from './src/login/SignUpScreen';
 import PoolListScreen from './src/pools/PoolListScreen';
+import PoolAdminScreen from './src/pools/PoolAdminScreen';
+import PoolDetailsSceen from './src/pools/PoolDetailsScreen';
 import ProfileScreen from './src/account/ProfileSreen';
 import TicketListScreen from './src/tickets/TicketListScreen';
 import TicketAddEditScreen from './src/tickets/TicketAddEditScreen';
@@ -29,7 +33,9 @@ const AddTabStack = createStackNavigator(
 
 const HomeTabStack = createStackNavigator(
   {
-    Home: { screen: TicketListScreen }
+    Home: { screen: TicketListScreen, navigationOptions: {
+      
+    } }
     // Tickets for Pool
     // Tickets for User
   },
@@ -40,7 +46,9 @@ const HomeTabStack = createStackNavigator(
 
 const PoolsTabStack = createStackNavigator(
   {
-    Pools: { screen: PoolListScreen }
+    Pools: { screen: PoolListScreen },
+    Admin: { screen: PoolAdminScreen },
+    Details: { screen: PoolDetailsSceen }
   },
   {
 
@@ -58,7 +66,7 @@ const SettingsTabStack = createStackNavigator(
 
 const LoggedInTabNav = createBottomTabNavigator(  
   {
-    Home: HomeTabStack,
+    Home: { screen: HomeTabStack},
     Add: AddTabStack,
     Pools: PoolsTabStack,
     Settings: SettingsTabStack
@@ -85,7 +93,7 @@ const App = createSwitchNavigator(
     App: LoggedInTabNav
   },
   {
-    initialRouteName: 'App'
+    initialRouteName: 'AuthLoading'
   }
 );
 

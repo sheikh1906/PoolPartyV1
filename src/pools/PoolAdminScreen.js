@@ -8,12 +8,12 @@
 import React, {useState, useEffect} from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 
-const PoolEditScreen = () => {
+const PoolAdminScreen = () => {
     return (
-        <View><Text>Pool Edit Screen</Text></View>
+        <View><Text>Pool Admin Screen</Text></View>
     );
 }
 
 const styles = StyleSheet.create();
 
-export default PoolEditScreen;
+export default PoolAdminScreen;

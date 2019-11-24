@@ -5,45 +5,35 @@
  * Company: Mogul Software LLC
  */
 
-import React, {useState, useEffect} from 'react';
-import { FlatList, StyleSheet, View } from 'react-native';
-import { GetTickets } from '../mocks/Tickets';
+import React, {useState} from 'react';
+import {FlatList, StyleSheet, View} from 'react-native';
+import {GetTickets} from '../mocks/Tickets';
 
 import TicketCard from './TicketCard';
 
-const TicketListScreen = () => {
-
-    const ticketsAPIURL = "";
+const TicketListScreen = () => {const ticketsAPIURL = "";
     //const [tickets, setTickets] = useState([]);
-    const [error, setError] = useState({});
+    const [] = useState({});
     const tickets = GetTickets();
 
-    async function fetchTickets(){
-        const res = await fetch(ticketsAPIURL);
-        res
-        .json(res)
-        .then(
-            res => setTickets(res)
-        )
-        .catch();
-    }
 
     // useEffect(()=>{
     //     setTickets(GetTickets());
     // });
 
     return(
-        <View>
+        <View style={styles.container}>
             <FlatList
                 keyExtractor={item => item._id.toString()}
                 data={tickets}
-                renderItem={ (item) => <TicketCard {...item} ></TicketCard> }
-                //contentContainerStyle={{flexGrow: 1, justifyContent: 'center'}}
+                renderItem={item => <TicketCard {...item} />}
             />
         </View>
     );
 }
 
-//const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {backgroundColor: 'lavender'},
+});
 
 export default TicketListScreen;
