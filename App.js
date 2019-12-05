@@ -31,9 +31,7 @@ const AddTabStack = createStackNavigator(
 
 const HomeTabStack = createStackNavigator(
   {
-    Home: { screen: TicketListScreen, navigationOptions: {
-      
-    } }
+    Home: { screen: TicketListScreen }
     // Tickets for Pool
     // Tickets for User
   },

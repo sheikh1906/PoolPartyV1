@@ -32,6 +32,12 @@ const TicketListScreen = () => {const ticketsAPIURL = "";
     );
 }
 
+TicketListScreen.navigationOptions = ({navigation}) => {
+    return ({
+        title: 'Pool Party!'
+    });
+}
+
 const styles = StyleSheet.create({
   container: {backgroundColor: 'lavender'},
 });
