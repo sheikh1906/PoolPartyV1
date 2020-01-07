@@ -9,7 +9,7 @@ import React from 'react';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack'; 
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import AuthLoadingScreen from './src/login/AuthLoadingScreen';
 import LoginScreen from './src/login/LoginScreen';
 import SignUpScreen from './src/login/SignUpScreen';
@@ -19,6 +19,9 @@ import PoolDetailsSceen from './src/pools/PoolDetailsScreen';
 import ProfileScreen from './src/account/ProfileSreen';
 import TicketListScreen from './src/tickets/TicketListScreen';
 import TicketAddEditScreen from './src/tickets/TicketAddEditScreen';
+
+const icon1 = <FontAwesome5 name={'comments'} solid />;
+const icon2 = <FontAwesome5 name={'git'} brand />;
 
 const AddTabStack = createStackNavigator(
   {
@@ -62,10 +65,10 @@ const SettingsTabStack = createStackNavigator(
 
 const LoggedInTabNav = createBottomTabNavigator(  
   {
-    Home: { screen: HomeTabStack, navigationOptions: { tabBarIcon : <Icon name="home" size={20} />}},
-    Add: { screen: AddTabStack, navigationOptions: { tabBarIcon: <Icon name="plus" size={20} />}},
-    Pools: { screen: PoolsTabStack, navigationOptions: { tabBarIcon: <Icon name="group" size={20} />}},
-    Settings: { screen: SettingsTabStack, navigationOptions: { tabBarIcon: <Icon name="gear" size={20} />}},
+    Home: { screen: HomeTabStack, navigationOptions: { tabBarIcon : <FontAwesome5 name={'home'} solid />}},
+    Add: { screen: AddTabStack, navigationOptions: { tabBarIcon: <FontAwesome5 name={'plus'} solid />}},
+    Pools: { screen: PoolsTabStack, navigationOptions: { tabBarIcon: <FontAwesome5 name={'group'} solid  />}},
+    Settings: { screen: SettingsTabStack, navigationOptions: { tabBarIcon: <FontAwesome5 name={'gear'} solid  />}},
   },
   {
     initialRouteName: 'Home'
