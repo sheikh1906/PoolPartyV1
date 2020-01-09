@@ -7,6 +7,8 @@
 
 import React, {useState, useEffect} from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
+import PoolCard from './PoolCard';
+
 
 import { GetPools } from '../mocks/Pool';
 
@@ -29,8 +31,6 @@ const PoolListScreen = () => {
     );
 }
 
-const styles = StyleSheet.create();
-
 const PoolCardOwner = () => {
     return (
         <View>
@@ -42,23 +42,13 @@ const PoolCardOwner = () => {
     );
 }
 
-const PoolCard = () => {
-    return (
-        <View>
-            <Text>
-                Pool Name
-            </Text>
-            <Text>
-                Pool Owner
-            </Text>
-            <Text>
-                Pool Drawings
-            </Text>
-            <Text>
-                Members
-            </Text>
-        </View>
-    );
-}
+
+const styles = StyleSheet.create({
+    container: {backgroundColor: 'lavender'},
+    title: { fontSize: 20 },
+    drawingsTitle: { fontSize: 20 },
+    drawings: {},
+    memberCount: {}
+  });
 
 export default PoolListScreen;

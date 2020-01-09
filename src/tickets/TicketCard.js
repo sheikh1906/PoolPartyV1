@@ -8,6 +8,9 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 
+import userCard from '../common/UserCard';
+import UserCard from '../common/UserCard';
+
 const TicketCard = (props) => {
 
     formatImageSource = (image) => {
@@ -30,15 +33,7 @@ const TicketCard = (props) => {
             <Image 
                 style={styles.ticketImage}
                 source={formatImageSource(props.item.image)} /> 
-            <View style={styles.userCard}>
-                <Image style={styles.userImage} 
-                source={formatImageSource(props.item.user.image)} />
-                <View style={styles.userNameContainer}>
-                    <Text style={styles.userName}>
-                        { props.item.user.fullName }
-                    </Text>
-                </View>
-            </View>
+            <UserCard {...props.item.user} />
         </View>
     );
 
@@ -51,10 +46,6 @@ const styles = StyleSheet.create({
     drawingTitle: { fontSize: 20 },
     drawingDate: { fontSize: 15 },
     poolName: { fontSize: 15 },
-    userCard: { flex: 1, flexDirection: 'row', alignItems:'center', alignContent: 'center', justifyContent: 'flex-start' },
-    userImage: { flex:1, width: 60, height: 60, borderRadius: 30, marginLeft: 5, marginRight: 5 },
-    userNameContainer: {  flex:4, height: 80, flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center', alignContent: 'center' },
-    userName: {fontSize: 20, alignContent: 'stretch', justifyContent: 'flex-start'}
 });
 
 export default TicketCard;
