@@ -8,6 +8,7 @@
 import React, {useState} from 'react';
 import {FlatList, StyleSheet, View,     
     Platform,
+    Button,
     TouchableHighlight,
     TouchableNativeFeedback, 
     TouchableOpacity} from 'react-native';
@@ -40,17 +41,25 @@ const TicketListScreen = () => {const ticketsAPIURL = "";
 TicketListScreen.navigationOptions = ({navigation}) => {
     return ({
         headerTitle: 'Pool Party!',
-        headerRight: AddButton
+        headerRight: <AddButton />
     });
 }
 
 const AddButton = () => {
 
     if(Platform.OS === 'android'){
-        <TouchableNativeFeedback />
+        return(
+            <TouchableNativeFeedback>
+                <Icon name={'plus'} solid />
+            </TouchableNativeFeedback>
+        );
     }
     else {
-        <TouchableOpacity />
+        return (
+            <TouchableOpacity>
+                <Icon name={'plus'} solid />
+            </TouchableOpacity>
+        )
     }
 }
 
