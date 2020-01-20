@@ -6,18 +6,18 @@
  */
 
 import React, {useState, useEffect} from 'react';
-import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Button, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const AuthLoadingScreen = (props) => {
     const {navigate} = props.navigation;
     return (
-        <View style={styles.View}>
+        <SafeAreaView style={styles.View}>
             <Text style={styles.LoginPrompt}>AuthLoadingScreen Screen</Text>
             <Button
                 title="Login"
                 onPress={() => navigate('App')}
                 style={styles.LoginButton} />
-        </View>
+        </SafeAreaView>
     );
 }
 

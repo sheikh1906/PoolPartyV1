@@ -21,7 +21,8 @@ import TicketListScreen from './src/tickets/TicketListScreen';
 import TicketAddEditScreen from './src/tickets/TicketAddEditScreen';
 
 const homeIcon = <FontAwesome5 name={'home'} solid />;
-const settingsIcon = <FontAwesome5 name={'gear'} solid />;
+const poolsIcon = <FontAwesome5 name={'users'} solid />;
+const settingsIcon = <FontAwesome5 name={'cog'} solid />;
 
 const AddTabStack = createStackNavigator(
   {
@@ -67,7 +68,7 @@ const LoggedInTabNav = createBottomTabNavigator(
   {
     Home: { screen: HomeTabStack, navigationOptions: { tabBarIcon : homeIcon }},
     //Add: { screen: AddTabStack, navigationOptions: { tabBarIcon: <FontAwesome5 name={'plus'} solid />}},
-    Pools: { screen: PoolsTabStack, navigationOptions: { tabBarIcon: <FontAwesome5 name={'group'} solid />}},
+    Pools: { screen: PoolsTabStack, navigationOptions: { tabBarIcon: poolsIcon }},
     Settings: { screen: SettingsTabStack, navigationOptions: { tabBarIcon: settingsIcon }}
   },
   {

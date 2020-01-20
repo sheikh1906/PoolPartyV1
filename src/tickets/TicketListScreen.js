@@ -6,7 +6,12 @@
  */
 
 import React, {useState} from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
+import {FlatList, StyleSheet, View,     
+    Platform,
+    TouchableHighlight,
+    TouchableNativeFeedback, 
+    TouchableOpacity} from 'react-native';
+import Icon  from 'react-native-vector-icons/FontAwesome5';
 import {GetTickets} from '../mocks/Tickets';
 
 import TicketCard from './TicketCard';
@@ -34,8 +39,19 @@ const TicketListScreen = () => {const ticketsAPIURL = "";
 
 TicketListScreen.navigationOptions = ({navigation}) => {
     return ({
-        title: 'Pool Party!'
+        headerTitle: 'Pool Party!',
+        headerRight: AddButton
     });
+}
+
+const AddButton = () => {
+
+    if(Platform.OS === 'android'){
+        <TouchableNativeFeedback />
+    }
+    else {
+        <TouchableOpacity />
+    }
 }
 
 const styles = StyleSheet.create({

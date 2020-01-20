@@ -30,7 +30,7 @@ const PoolCard = (props) => {
 }
 
 const styles = StyleSheet.create({
-    container: {backgroundColor: 'lavender'},
+    container: { flex:1, flexDirection: 'column', backgroundColor: 'white', marginBottom: 30},
     title: { fontSize: 20 },
     drawingsTitle: { fontSize: 20 },
     drawings: {},

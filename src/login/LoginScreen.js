@@ -6,11 +6,13 @@
  */
 
 import React, {useState, useEffect} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text } from 'react-native';
 
 const LoginScreen = () => {
     return (
-        <View><Text>Login Screen</Text></View>
+        <SafeAreaView>
+            <Text>Login Screen</Text>
+            </SafeAreaView>
     );
 }
 
