@@ -24,12 +24,22 @@ const UserCard = (props) => {
         return(
             <TouchableNativeFeedback>
                 <View style={styles.userCard}>
+<<<<<<< HEAD
                 <Image style={styles.userImage} 
                 source={formatImageSource(props.image)} />
                 <View style={styles.userNameContainer}>
                     <Text style={styles.userName}>
                         { props.fullName }
                     </Text>
+=======
+                    <Image style={styles.userImage} 
+                    source={formatImageSource(props.image)} />
+                    <View style={styles.userNameContainer}>
+                        <Text style={styles.userName}>
+                            { props.fullName }
+                        </Text>
+                    </View>
+>>>>>>> 9f1f6d9bfa94fcd6f3593f25a28cd2e739cc921d
                 </View>
                 </View>
             </TouchableNativeFeedback>
