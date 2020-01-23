@@ -20,9 +20,9 @@ import ProfileScreen from './src/account/ProfileSreen';
 import TicketListScreen from './src/tickets/TicketListScreen';
 import TicketAddEditScreen from './src/tickets/TicketAddEditScreen';
 
-const homeIcon = <FontAwesome5 name={'home'} solid />;
-const poolsIcon = <FontAwesome5 name={'users'} solid />;
-const settingsIcon = <FontAwesome5 name={'cog'} solid />;
+const homeIcon = <FontAwesome5 name={'home'} solid size={24} />;
+const poolsIcon = <FontAwesome5 name={'users'} solid size={24} />;
+const settingsIcon = <FontAwesome5 name={'cog'} solid size={24} />;
 
 const AddTabStack = createStackNavigator(
   {
@@ -35,12 +35,13 @@ const AddTabStack = createStackNavigator(
 
 const HomeTabStack = createStackNavigator(
   {
-    Home: { screen: TicketListScreen }
+    Home: { screen: TicketListScreen },
+    Add: { screen: TicketAddEditScreen }
     // Tickets for Pool
     // Tickets for User
   },
   {
-
+    initialRouteName: 'Home'
   }
 );
 
@@ -66,13 +67,13 @@ const SettingsTabStack = createStackNavigator(
 
 const LoggedInTabNav = createBottomTabNavigator(  
   {
-    Home: { screen: HomeTabStack, navigationOptions: { tabBarIcon : homeIcon }},
-    //Add: { screen: AddTabStack, navigationOptions: { tabBarIcon: <FontAwesome5 name={'plus'} solid />}},
+    Home: { screen: HomeTabStack ,navigationOptions: { tabBarIcon : homeIcon }},
     Pools: { screen: PoolsTabStack, navigationOptions: { tabBarIcon: poolsIcon }},
     Settings: { screen: SettingsTabStack, navigationOptions: { tabBarIcon: settingsIcon }}
   },
   {
-    initialRouteName: 'Home'
+    initialRouteName: 'Home',
+    tabBarOptions: { showLabel: false }
   }
 );
 

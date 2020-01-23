@@ -17,11 +17,10 @@ import {GetTickets} from '../mocks/Tickets';
 
 import TicketCard from './TicketCard';
 
-const TicketListScreen = () => {const ticketsAPIURL = "";
+const TicketListScreen = (props) => {const ticketsAPIURL = "";
     //const [tickets, setTickets] = useState([]);
     const [] = useState({});
     const tickets = GetTickets();
-
 
     // useEffect(()=>{
     //     setTickets(GetTickets());
@@ -41,23 +40,28 @@ const TicketListScreen = () => {const ticketsAPIURL = "";
 TicketListScreen.navigationOptions = ({navigation}) => {
     return ({
         headerTitle: 'Pool Party!',
-        headerRight: <AddButton />
+        headerTitleStyle: { flex: 1, alignSelf: 'center', justifyContent: 'center', textAlign: 'center', fontWeight: 'bold'},
+        headerRight: <AddButton navigate={navigation} />
     });
 }
 
-const AddButton = () => {
+const AddButton = (props) => {
 
     if(Platform.OS === 'android'){
         return(
-            <TouchableNativeFeedback>
-                <Icon name={'plus'} solid />
+            <TouchableNativeFeedback onPress={() => props.navigate.navigate('Add')}>
+                <View style={styles.addButton}>
+                <Icon name={'plus'} solid size={24} />
+                </View>
             </TouchableNativeFeedback>
         );
     }
     else {
         return (
-            <TouchableOpacity>
-                <Icon name={'plus'} solid />
+            <TouchableOpacity style={styles.addButton}
+            onPress={() => props.navigate.navigate('Add')}
+            >
+                <Icon name={'plus'} solid size={24} />
             </TouchableOpacity>
         )
     }
@@ -65,6 +69,7 @@ const AddButton = () => {
 
 const styles = StyleSheet.create({
   container: {backgroundColor: 'lavender'},
+  addButton: { paddingRight: 10 }
 });
 
 export default TicketListScreen;
