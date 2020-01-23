@@ -22,13 +22,15 @@ const UserCard = (props) => {
     }
     if(Platform.OS === "android"){ 
         return(
-            <TouchableNativeFeedback style={styles.userCard}>
+            <TouchableNativeFeedback>
+                <View style={styles.userCard}>
                 <Image style={styles.userImage} 
                 source={formatImageSource(props.image)} />
                 <View style={styles.userNameContainer}>
                     <Text style={styles.userName}>
                         { props.fullName }
                     </Text>
+                </View>
                 </View>
             </TouchableNativeFeedback>
         );
