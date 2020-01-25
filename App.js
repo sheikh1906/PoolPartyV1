@@ -16,7 +16,7 @@ import SignUpScreen from './src/login/SignUpScreen';
 import PoolListScreen from './src/pools/PoolListScreen';
 import PoolAdminScreen from './src/pools/PoolAdminScreen';
 import PoolDetailsSceen from './src/pools/PoolDetailsScreen';
-import ProfileScreen from './src/account/ProfileSreen';
+import ProfileScreen from './src/account/SettingsScreen';
 import TicketListScreen from './src/tickets/TicketListScreen';
 import TicketAddEditScreen from './src/tickets/TicketAddEditScreen';
 
