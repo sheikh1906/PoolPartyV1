@@ -6,7 +6,7 @@
  */
 
 import React, {useState, useEffect} from 'react';
-import { Image, Input, StyleSheet, Text, View, Picker } from 'react-native';
+import { Image, Input, StyleSheet, Text, View, Picker, ColorPropType } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 
 import TicketImageButton from './TicketImageButton';
@@ -73,14 +73,20 @@ const TicketAddEditScreen = () => {
         }
     
     return (
-    <View style={styles.container}>
-        <Text style={styles.fieldTitle}>Select Pool</Text>
-        <Picker ></Picker>
-        <Text style={styles.fieldTitle}>Select Drawing</Text>
-        <Picker></Picker>
-        <Text style={styles.fieldTitle}>Add Ticket Image</Text>
-        <View>
-            { imagePlaceholder }
+    <View >
+      <View style={styles.container}>
+          <Text style={styles.fieldTitle}>Select Pool</Text>
+          <Picker style={styles.select}>
+            <Picker.Item label="My Pool" value="myPool" />
+          </Picker>
+          <Text style={styles.fieldTitle}>Select Drawing</Text>
+          <Picker style={styles.select}>
+            <Picker.Item label="PowerBall" value="powerball" />
+            <Picker.Item label="MegaMillions" value="megamillions" />
+          </Picker>
+          <View style={styles.imageAddSection}>
+              { imagePlaceholder }
+          </View>
         </View>
     </View>
 );}
@@ -88,8 +94,12 @@ const TicketAddEditScreen = () => {
 
 
 const styles = StyleSheet.create({
-    container: { flex: 1, flexDirection: 'column' },
-    fieldTitle: { }
+    container: { flex: 1, flexDirection: 'column', 
+      justifyContent: 'center',
+      alignItems: 'stretch'},
+    fieldTitle: { fontSize: 20 },
+    imageAddSection: { flex: 2, flexDirection: 'column', alignItems: 'center'},
+    select: { flex: 1 }
 });
 
 export default TicketAddEditScreen;

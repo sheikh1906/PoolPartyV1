@@ -8,9 +8,11 @@
 import React from 'react';
 import { 
     Platform,
+    Text,
     TouchableHighlight,
     TouchableNativeFeedback, 
     StyleSheet, View } from 'react-native';
+import Icon  from 'react-native-vector-icons/FontAwesome5';
 
 
 const TicketImageButton = (props) => {
@@ -25,9 +27,12 @@ const TicketImageButton = (props) => {
         );
     }
     return(
-        <TouchableHighlight onPress={props.onPress}>
-        <View style={styles.container}>
-            <View style={styles.circle}></View>
+        <TouchableHighlight style={styles.container} onPress={props.onPress}>
+        <View >
+            <View style={styles.imagePlaceholder}>
+                <Icon name={'plus-circle'} size={60} />
+            </View>
+            <Text style={styles.fieldTitle}>Add Ticket Image</Text>
         </View>
         </TouchableHighlight>
     );
@@ -36,9 +41,13 @@ const TicketImageButton = (props) => {
 
 const styles = StyleSheet.create({
     container: { flex:1, flexDirection: 'column', 
-    backgroundColor: 'white', width: 200, height: 200
+    justifyContent: 'center',
+    alignItems: 'stretch',
+    backgroundColor: 'lavender', width: '80%', height: 200
     },
-    circle: { borderColor: 'black', borderRadius: 40, borderWidth: 2, height: 80, width: 80}
+    circle: { borderColor: 'black', borderRadius: 40, borderWidth: 2, height: 80, width: 80},
+    imagePlaceholder: { flex:2, flexDirection: 'column',justifyContent: 'center', alignItems: 'center' },
+    fieldTitle: { flex: 1, }
 });
 
 export default TicketImageButton;
